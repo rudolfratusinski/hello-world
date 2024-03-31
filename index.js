@@ -19,7 +19,7 @@ app.get('/database', async (req, res) => {
       username: process.env.DATABASE_USERNAME, // Replace with your IAM role
     });
 
-    const token = signer.getAuthToken({
+    const token = await signer.getAuthToken({
       username: process.env.DATABASE_USERNAME, // Replace with your database username
     });
 
