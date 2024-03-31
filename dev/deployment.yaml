@@ -14,6 +14,15 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: ghcr.io/rudolfratusinski/hello-world:v1.0.0
+        image: ghcr.io/rudolfratusinski/hello-world:v1.0.1
         ports:
         - containerPort: 3000
+        volumeMounts:
+        - name: hello-world-env-file
+          mountPath: /app/.env
+          readOnly: true
+      serviceAccountName: rds-iam-auth
+    volumes:
+    - name: hello-world-env-file
+      configMap:
+        name: aws-infra-data-config
