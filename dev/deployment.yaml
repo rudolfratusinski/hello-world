@@ -19,7 +19,8 @@ spec:
         - containerPort: 3000
         volumeMounts:
         - name: hello-world-env-file
-          mountPath: /app
+          mountPath: /app/.env
+          subPath: .env
           readOnly: true
       serviceAccountName: rds-iam-auth
       volumes:
