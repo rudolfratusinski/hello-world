@@ -1,6 +1,5 @@
 const express = require('express');
 const { Client } = require('pg');
-const { AWS } = require('aws-sdk');
 const { Signer } = require ("@aws-sdk/rds-signer");
 require('dotenv').config()
 
@@ -22,9 +21,6 @@ app.get('/database', async (req, res) => {
     const token = await signer.getAuthToken({
       username: process.env.DATABASE_USERNAME, // Replace with your database username
     });
-
-    console.log('debug..')
-    console.log(token)
 
     const client = new Client({
       host: process.env.DATABASE_URL, // Replace with your RDS endpoint
