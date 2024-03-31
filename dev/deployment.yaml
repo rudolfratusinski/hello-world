@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: ghcr.io/rudolfratusinski/hello-world:latest
+        image: ghcr.io/rudolfratusinski/hello-world:v1.0.0
         ports:
         - containerPort: 3000
