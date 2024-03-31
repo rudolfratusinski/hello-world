@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - 'v*.*.*'
 
 jobs:
   deploy:
@@ -27,5 +27,5 @@ jobs:
 
     - name: 'Build and push image'
       run: |
-        docker build . --tag ghcr.io/${{github.actor}}/hello-world:latest
-        docker push ghcr.io/${{github.actor}}/hello-world:latest
+        docker build . --tag ghcr.io/${{ github.actor }}/hello-world:${{ github.ref_name }}
+        docker push ghcr.io/${{ github.actor }}/hello-world:${{ github.ref_name }}
