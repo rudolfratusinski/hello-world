@@ -2,6 +2,7 @@ const express = require('express');
 const { Client } = require('pg');
 const { AWS } = require('aws-sdk');
 const { Signer } = require ("@aws-sdk/rds-signer");
+require('dotenv').config()
 
 var app = express();
 
