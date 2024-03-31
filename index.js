@@ -23,6 +23,7 @@ app.get('/database', async (req, res) => {
       username: process.env.DATABASE_USERNAME, // Replace with your database username
     });
 
+    console.log('debug..')
     console.log(token)
 
     const client = new Client({
