@@ -9,6 +9,7 @@
   "author": "rudolf ratusinski",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-sqs": "^3.540.0",
     "@aws-sdk/rds-signer": "^3.540.0",
     "aws-sdk": "^2.1589.0",
     "dotenv": "^16.4.5",
